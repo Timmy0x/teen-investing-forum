@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: whitesmoke;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#back {
+    width: 24%;
+
+    margin: 0;
+    position: fixed;
+
+    border: none;
+    border-radius: 0;
+    border-bottom-right-radius: 10px;
+
+    background-color: white;
+}
+#back:hover {
+    background-color: white;
+    color: black;
+    transform: none;
+    box-shadow: none;
+}
+
+
+#main {
+    padding-top: 10%;
+}
+
+#main .input-group button {
+    width: 60%;
+
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 1.6%;
+
+    background-color: white;
+}
+#main .input-group button:hover {
+    color: black;
+    transform: none;
+    box-shadow: none;
+}
+#main .input-group input {
+    border: 1px black solid;
+    border-bottom: 0;
+
+    outline: none;
+    border-radius: 12px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    padding: 2%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+#main .input-group button {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+#main .input-group p {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+
+    font-weight: bold;
+    font-size: 1.6rem;
+}

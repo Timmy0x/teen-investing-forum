@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Chat | Forum | App | Teen Investing</title>
+
+        <link rel="stylesheet" href="/core.css">
+        <link rel="stylesheet" href="/chat/home.css">
+    </head>
+    
+    <body>
+        <button id="create" onclick="window.location.href = '/chat/create'">Create a chatroom</button>
+        <div id="main">
+            <div class="input-group">
+                <p>Join a chat</p>
+                <input id="join-input" placeholder="Chat name">
+                <button class="" onclick="window.location.href = '/chat/room/' + document.getElementById('join-input').value">Join</button>    
+            </div>
+            <div id="chatrooms">
+                <p>Public chatrooms</p>
+                <div onclick="window.location.href='/chat/room/lobby'">
+                    <h2>Lobby</h2>
+                    <p>Anything goes here!</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

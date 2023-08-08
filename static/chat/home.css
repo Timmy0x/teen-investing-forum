@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: whitesmoke;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#create {
+    position: fixed;
+
+    top: 2%;
+    right: 2%;
+
+    float: right;
+
+    width: fit-content;
+
+    border-radius: 20px;
+    border: 2px black solid;
+
+    background-color: white;
+    color: black;
+}
+#create:hover {
+    transform: none;
+    box-shadow: none;
+
+    background-color: white;
+    color: black;
+}
+
+
+#main {
+    padding-top: 10%;
+}
+
+#main .input-group button {
+    width: 60%;
+
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 1.6%;
+
+    background-color: white;
+}
+#main .input-group button:hover {
+    color: black;
+    transform: none;
+    box-shadow: none;
+}
+#main .input-group input {
+    border: 1px black solid;
+    border-bottom: 0;
+
+    outline: none;
+    border-radius: 12px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    padding: 2%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+#main .input-group button {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+#main .input-group p {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+#main #chatrooms {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 4%;
+}
+#main #chatrooms div {
+    display: inline-block;
+
+    width: calc(40% - 2px);
+
+    padding: 3%;
+    padding-top: 1.4%;
+    padding-bottom: 1.4%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+
+    border-radius: 10px;
+    border: 1px lightgrey solid;
+
+    background-color: white;
+
+    cursor: grab;
+}
+#main #chatrooms div:hover {
+    transition: 0.6s;
+    border: 1px darkgray solid;
+}
+#main #chatrooms div h2 {
+    padding-bottom: 0;
+
+    font-weight: lighter;
+}
+#main #chatrooms p:first-child {
+    padding-bottom: 0;
+    margin-bottom: 5px;
+
+    font-weight: bold;
+    font-size: 1.6rem;
+}

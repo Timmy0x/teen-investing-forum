@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>Forum | App | Teen Investing</title>
+
+        <link rel="stylesheet" href="/core.css">
+        <link rel="stylesheet" href="/forum.css">
+
+        <script src="/core.js"></script>
+        <script src="/identity.js"></script>
+        <script src="/forum.js"></script>
+    </head>
+    
+    <body>
+        <div id="alert" style="display: none;">
+            <p id="alert-contents">Transaction send: tx long tx</p>
+            <p id="alert-close"><i class="fa fa-times"></i></p>
+        </div>
+		
+        <div id="main">
+            <div id="sidenav">
+                <p class="content-button" id="button-homepage" onclick="forum.openContent('homepage')">Home</p>
+                <p class="content-button" id="button-profile" onclick="forum.openContent('profile')">Profile</p>
+                <p class="content-button" id="button-active" onclick="forum.openContent('active')">Active</p>
+                <p class="content-button" id="button-chat" onclick="forum.openContent('chat')">Chat</p>
+            </div>
+            <div id="content">
+                <div id="content-homepage" class="content-item" style="display: grid;">
+                    <div id="post">
+                        <span id="post-input" role="textbox" contenteditable></span>
+                        <button id="post-submit">Post</button>
+                    </div>
+                    <div id="feed">
+                    </div>
+                </div>
+                <div id="content-chat" class="content-item" style="display: none;">
+                    <iframe class="content-item-mainframe" src="/chat"></iframe>
+                </div>
+                <div id="content-frame" class="content-item" style="display: none;">
+                    <button class="frame-back" id="frame-back">&#10006;</button>
+                    <iframe class="frame-main" id="frame-main" src="/profile/timmy"></iframe>
+                </div>
+                <div id="content-profile" class="content-item" style="display: none;">
+                    <div id="content-profile-img"></div>
+                    <div id="content-profile-header">
+                        <h1></h1>
+                        <p></p>
+                    </div>
+                    <div id="content-profile-feed">
+                        <div>
+                            <b>Name</b>
+                            <i>Date</i>
+                            <p>Post content, that can be longand short alike</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="content-active" class="content-item" style="display: none;">
+                    <div id="content-active-items">
+                        <h1>Users</h1>
+                        <div>
+                            <p><b>Person name</b></p>
+                        </div>
+                        <div>
+                            <p><b>Person name</b></p>
+                        </div>
+                        <div>
+                            <p><b>Person name</b></p>
+                        </div>
+                        <div>
+                            <p><b>Person name</b></p>
+                        </div>
+                        <div>
+                            <p><b>Person name</b></p>
+                        </div>
+                        <div>
+                            <p><b>Person name</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </body>
+</html>

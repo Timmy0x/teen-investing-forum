@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Room: {{ title }} | Chat | Forum | App | Teen Investing</title>
+
+        <link rel="stylesheet" href="/core.css">
+        <link rel="stylesheet" href="/chat/room.css">
+    </head>
+    
+    <body>
+        <div id="main">
+            <button id="back" onclick="window.location.href = '/chat'">Back</button>
+            <button id="invite">Invite</button>
+
+            <h1 id="title">{{ title }}</h1>
+            <div id="messages">
+                {% if msg_list %}
+                    {% for message in msg_list %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p>This room is a little lonely!</p>
+                {% endif %}
+            </div>
+            <div id="chat">
+                <input type="text" id="chat-input" name="message">
+                <button id="chat-submit">Submit</button>
+            </div>
+        </div>
+
+        <script>
+            for (var i = 0; i < document.getElementById("messages").getElementsByTagName("p").length; i++) {
+                document.getElementById("messages").getElementsByTagName("p")[i].innerHTML = document.getElementById("messages").getElementsByTagName("p")[i].innerText
+            }
+
+            document.getElementById("messages").getElementsByTagName("p")[this.length].scrollIntoView()
+            document.getElementById("chat-submit").addEventListener("click", async function () {
+                m = await fetch("/chat/room/{{ title }}/send/" + document.getElementById("chat-input").value + "/{{ user }}")
+            })
+            document.getElementById("invite").addEventListener("click", function () {
+                const textToCopy = window.location.hostname + "/chat/room/{{ title }}";
+                navigator.permissions.query({ name: 'clipboard-write' }).then(result => {
+                        if (result.state === 'granted' || result.state === 'prompt') {
+                        navigator.clipboard.writeText(textToCopy)
+                            .then(() => {
+                                alert("Your invite link is copied to your clipboard.");
+                            })
+                            .catch(err => {
+                                console.error('Failed to copy text to clipboard:', err);
+                                alert("Failed to copy invite link to clipboard.");
+                            });
+                        } else {
+                            console.error('Clipboard write permission denied');
+                            alert("Clipboard write permission denied. Please copy the invite link manually.");
+                        }
+                    });
+            });
+
+
+            setInterval(async function () {
+                f = await fetch("/chat/room/{{ title }}/messages")
+                f = await f.json()
+                document.getElementById("messages").innerHTML = ""
+                for (var i = 0; i < f.length; i++) {
+                    document.getElementById("messages").innerHTML+="<p>" + f[i] + "</p>"
+                }
+            }, 250)
+        </script>
+    </body>
+</html>
