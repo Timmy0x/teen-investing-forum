@@ -21,8 +21,9 @@ CORS(app)
 ########## Static ##########
 @app.route("/")
 def index():
-    if json.loads(request.cookies.get("user")) not in user_list:
-        user_list.append(json.loads(request.cookies.get("user")))
+    if request.cookies:
+        if json.loads(request.cookies.get("user")) not in user_list:
+            user_list.append(json.loads(request.cookies.get("user")))
     return open("static/index.html").read()
 @app.route("/profile/<name>")
 def profile(name):
